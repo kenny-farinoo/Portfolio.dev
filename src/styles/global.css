@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* Esto vincula la variante dark: de Tailwind con la clase .dark de tu HTML */
+  --variant-dark: .dark &;
+  --font-sans: "Onest Variable", system-ui, sans-serif;
+}
+
+/* Esto es para que el fondo de TODA la página sea negro por defecto en modo oscuro */
+/* Con esto le devolvemos el color blanco al texto en modo oscuro */
+@layer base {
+  html.dark body {
+    color: white;
+  }
+}

@@ -1,11 +1,82 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro'
+import SocialPill from '../components/SocialPill.astro';
+import GitHubIcon from '../components/icons/GitHub.astro'
+import MailIcon from '../components/icons/Mail.astro'
+import Experience from '../components/Experience.astro'
+import SectionContainer from '../components/SectionContainer.astro';
+import BriefCase from '../components/icons/BriefCase.astro';
+import CodeIcon from '../components/icons/Code.astro'
+import Projects from '../components/Projects.astro'
 ---
 
-<Layout>
-	<Welcome />
+<Layout title = "Portfolio de Kenny - Desarrollador y Programador Web con licenciatura en inglés"
+	description = "Contrata a Kenny para crear tu aplicación web o para enseñar Inglés."
+
+>	
+	<main class = "px-4">
+		<SectionContainer class ="py-44 pb-30">
+			 <img class = "rounded-full size-16 mb-8" 
+    src="https://avatars.githubusercontent.com/u/229010949?s=400&u=6ead505d42cd63fae902488d074775c072814a8d&v=4" 
+    alt="kenny-photo"
+    />
+
+		<h1 class="text-white text-3xl lg:text-3xl md:text-4xl font-bold flex items-center gap-x-4 pb-6 lg:pb-10"> 
+			Que tal, soy Kenny <a 
+			href= "https://www.linkedin.com/in/kenny-fariño-olaya-a0b254317" 
+			target ="_blank"
+			rel="noopener"
+			class ="flex justify-center items center"
+			>
+			
+			<Badge>Disponible para trabajar
+			</a>
+		</h1>
+		<h2 class = "text-xl lg:text-2xl opacity-85 text-wrap max-w-[700px]"> 
+			Front-End Developer y Licenciado en Inglés. De
+			<span class="text-yellow-300">Ecu</span><span class="text-blue-300">ad</span><span class="text-red-300">or</span>    
+			<img src="https://flagcdn.com/w40/ec.png" alt="Bandera de Ecuador" class="inline-block h-3 w-auto align-middle ml-1" />,
+			<span class="text-blue-200">Guayaquil</span>. 
+			Me especializo en crear aplicaciones web y a enseñar Inglés! 
+		</h2>
+
+
+		<nav class="flex gap-4 mt-7 flex-wrap">
+			<SocialPill href= "https://www.linkedin.com/in/kenny-fariño-olaya-a0b254317">
+				<LinkedInIcon class= "size-4 md:size-6" />
+				LinkedIn	
+			</SocialPill>	
+			
+			<SocialPill href= "https://github.com/kenny-farinoo">
+				<GitHubIcon class= "size-4 md:size-6" />
+				GitHub	
+			</SocialPill>
+			
+			<SocialPill href= "mailto: kennyfarino@gmail.com">
+				<MailIcon class= "size-4 md:size-6" />
+				kennyfarino@gmail.com
+			</SocialPill>	
+		</nav>
+		
+	</SectionContainer>
+
+	<SectionContainer id = "experiencia">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center" >
+			<BriefCase class="size-8" />
+			Experiencia laboral
+		</h2>
+		<Experience />
+	</SectionContainer>
+
+	<SectionContainer id = "proyectos">
+		<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center" >
+			<CodeIcon class="size-8" />
+			Proyectos
+		</h2>
+		<Projects/>
+	</SectionContainer>
+
+	</main>
 </Layout>

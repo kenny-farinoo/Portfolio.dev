@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Profesor de Inglés",
+    description: "Doy clases de inglés en Blue Hill College a estudiantes de diferentes niveles; desde A1 - B1",
+  },
+  {
+    date: "Febrero - Abril, 2026",
+    title: "Asistente de Bodega/Auxiliar",
+    description: "Realizé la debida dosificación y organización de materia prima relacionada al sector pastelero en la empresa Dolupa.",
+  },
+
+   {
+    date: "Enero, 2023 - Junio, 2023",
+    title: "Profesor de inglés remoto",
+    description: "Diseñe clases virtuales a estudiantes enfocadas en la mejora de habilidades comunicativas inmersivas. Usando aplicaciones como: Kahoot, Quiziz, Liveworksheets.",
+  },
+];
+---
+
+<ol class="relative border-s border-default ml-2 ">
+  {
+    EXPERIENCE.map((experience) => (
+      <ExperienceItem {...experience} />
+    ))
+  }
+</ol>

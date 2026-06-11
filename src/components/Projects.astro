@@ -1,0 +1,70 @@
+---
+import React from '../components/icons/React.astro'
+import Vite from '../components/icons/Vite.astro'
+import Typescript from '../components/icons/Typescript.astro'
+
+const TAGS = {
+    REACT: {
+        name: "React",
+        class: "bg-blue text-white",
+        icon: React
+    },
+
+    VITE: {
+        name: "Vite",
+        class: "bg-blue text-white",
+        icon: Vite
+
+    },
+
+    TYPESCRIPT: {
+        name: "Typescript",
+        class: "bg-blue text-white",
+        icon: Typescript
+    }
+
+}
+
+
+
+const PROJECTS = [
+{
+
+    title: 'Juego del Ahorcado',
+    description: 'Presiona las letra que creas que conforman la palabra hasta completarla antes que se ahorque el stick man.',
+    link: 'https://my-game-kafo.netlify.app/',
+    github: '#',
+    image: '/projects/ahorcado.webp',
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.TYPESCRIPT]
+
+}
+
+]
+
+---
+
+
+{
+    PROJECTS.map (({image, title, description, tags}) => (
+        <article>
+            <h3 class ="text-xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty mb-10"> {description}</p>
+            <ul class=" flex gap-x-2 flex-row mb-5">
+                {tags.map((tag) => ( 
+                    <li>
+                    <span class = {`flex gap-x-2 rounded-full text-xs  ${tag.class}py-1 px-2 `}
+                    >
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                    </span>
+                    </li>
+                ))}
+                </ul>
+                <img 
+                class="rounded shadow-2xl shadow-white/10" 
+                src= {image}
+                 alt={`Captura de pantalla del proyecto ${image}`} />
+        </article>
+    ))
+
+}
