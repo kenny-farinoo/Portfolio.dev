@@ -2,6 +2,8 @@
 import React from '../components/icons/React.astro'
 import Vite from '../components/icons/Vite.astro'
 import Typescript from '../components/icons/Typescript.astro'
+import Tailwind from '../components/icons/Tailwind.astro'
+import AstroIcon from './icons/AstroIcon.astro'
 
 const TAGS = {
     REACT: {
@@ -21,8 +23,20 @@ const TAGS = {
         name: "Typescript",
         class: "bg-blue text-white",
         icon: Typescript
-    }
+    },
 
+    ASTRO: {
+        name: "Astro",
+        class: "bg-black text-white",
+        icon: AstroIcon
+    },
+
+    TAILWINDCSS: {
+        name: "TailwindCSS",
+        class: "bg-blue text-white",
+        icon: Tailwind
+
+    }
 }
 
 
@@ -30,14 +44,24 @@ const TAGS = {
 const PROJECTS = [
 {
 
-    title: 'Juego del Ahorcado',
+    title: 'Juego del Ahorcado :D',
     description: 'Presiona las letra que creas que conforman la palabra hasta completarla antes que se ahorque el stick man.',
     link: 'https://my-game-kafo.netlify.app/',
     github: '#',
     image: '/projects/ahorcado.webp',
     tags: [TAGS.REACT, TAGS.VITE, TAGS.TYPESCRIPT]
 
+}, 
+
+{
+    title: 'Portfolio',
+    description: 'Creación de portfolio en página web',
+    link: 'https://kenny-farinooportfolio.netlify.app/',
+    gitthub: '#',
+    image: '#',
+    tags: [TAGS.TYPESCRIPT, TAGS.ASTRO, TAGS.TAILWINDCSS]
 }
+
 
 ]
 
@@ -46,7 +70,7 @@ const PROJECTS = [
 
 {
     PROJECTS.map (({image, title, description, tags}) => (
-        <article>
+        <article class="mb-20">
             <h3 class ="text-xl font-semibold text-yellow-200 mb-2">{title}</h3>
             <p class="text-lg mb-4 text-pretty mb-10"> {description}</p>
             <ul class=" flex gap-x-2 flex-row mb-5">
